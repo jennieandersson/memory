@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import './styles/global.scss'
+import Game from './Components/Game/Game'
+import Wrapper from './Components/Layout/Wrapper/Wrapper'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Wrapper element='header'>
+        <h1>Memory Game</h1>
+      </Wrapper>
+      <main>
+        <Game />
+      </main>
+    </>
   );
 }
 
-export default App;
+export default App

@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&family=Play:wght@400;700&display=swap");
+@import './variables';
+
+html {
+  box-sizing: border-box;
+  font-size: calc(1em + 1vw);
+  line-height: 1.2;
+  scroll-behavior: smooth;
+
+  --scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  color: $prussian-blue;
+}
+
+main {
+  padding-bottom: 100px;
+}
+
+h1 {
+  font-size: 2em;
+  font-family: "Play", serif;
+  color: $blue-munsell;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-family: "Play", serif;
+  color: $blue-munsell;
+}
+
+p {
+  font-size: 1em;
+}
+
+label {
+  font-size: .8em;
+}
+
+input {
+  padding: .5em;
+  margin: 1em 0;
+  border: 1px solid $blue-munsell;
+  border-radius: 5px;
+  
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    border: none;
+    box-shadow: 0 0 0 4px scale-color($blue-munsell, $lightness: -40%);
+  }
+}
+
+button {
+  padding: .5em;
+  margin: 0 1em;
+  color: #fff;
+  background-color: $blue-munsell;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+
+  &:hover,
+  &:active {
+    background-color: scale-color($blue-munsell, $lightness: -20%);
+  }
+
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 4px scale-color($blue-munsell, $lightness: -40%);
+  }
+
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.scroll-lock {
+  overflow: hidden;
+}
+
+.error {
+  font-size: 0.7em;
+  background-color: #ffecec;
+  padding: 0.4em;
+  border: 1px solid #fad9d7;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 1em;
+    height: 1em;
+    margin-right: .5em;
+  }
+}
