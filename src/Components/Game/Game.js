@@ -12,6 +12,7 @@ Om det är andra bilden, vänd bilden och jämför den med första bilden
 Matchar dem? Om ja, låt de ligga kvar
 Om nej, vänd tillbaka
 */
+
 const shuffleArray = (array) => {
   return array.sort(() => .5 - Math.random());
 }
@@ -63,7 +64,7 @@ const Game = () => {
     if (finished) {
       setIsActive(false);
       const bestPossible = cards.length
-      const pointsLost = (seconds / 10) * flippedCount - bestPossible
+      const pointsLost = seconds + flippedCount - bestPossible
       setScore(Math.floor(100 - pointsLost))
     }
   }, [
@@ -155,7 +156,7 @@ const Game = () => {
 
   return (
     <>
-      {!finished
+      {finished
         ? <Finished score={score} resetGame={handleResetGame} />
         : (
           <div className={styles.game}>
