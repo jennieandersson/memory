@@ -155,7 +155,7 @@ const Game = () => {
 
   return (
     <>
-      {!finished
+      {finished
         ? <Finished score={score} resetGame={handleResetGame} />
         : (
           <div className={styles.game}>
