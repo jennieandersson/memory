@@ -111,20 +111,20 @@ const Game = () => {
   }, [firstCard, secondCard])
 
   const setCardIsFlipped = (cardID, isFlipped) => {
-  setCards(prev => prev.map(c => {
-    if (c.id !== cardID)
-      return c;
-    return {...c, isFlipped}
-  }))
+    setCards(prev => prev.map(c => {
+      if (c.id !== cardID)
+        return c;
+      return {...c, isFlipped}
+    }))
   }
   
   const setCardCanFlip = (cardID, canFlip) => {
-  setCards(prev => prev.map(c => {
-    if (c.id !== cardID)
-      return c;
-    return {...c, canFlip}
-  }))
-}
+    setCards(prev => prev.map(c => {
+      if (c.id !== cardID)
+        return c;
+      return {...c, canFlip}
+    }))
+  }
 
   const handleOnClick = (card) => {
     if (!card.canFlip) {
@@ -136,7 +136,6 @@ const Game = () => {
     if (firstCard && (card.id === firstCard.id) || secondCard && (card.id === firstCard.id)) {
       return
     }
-    if (secondCard) return
 
     setFlippedCount(flippedCount + 1);
     setCardIsFlipped(card.id, true);
@@ -156,7 +155,7 @@ const Game = () => {
 
   return (
     <>
-      {finished
+      {!finished
         ? <Finished score={score} resetGame={handleResetGame} />
         : (
           <div className={styles.game}>

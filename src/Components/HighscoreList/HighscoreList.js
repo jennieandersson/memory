@@ -3,7 +3,7 @@ import cn from 'classnames'
 import styles from './HighscoreList.module.scss'
 
 const HighscoreList = (list) => (
-  <div>
+  <div className={styles.wrapper}>
     <h2>High Score</h2>
     <List highscoreList={list.list} />
   </div>

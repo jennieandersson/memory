@@ -49,16 +49,16 @@ const Finished = ({ score, resetGame }) => {
     if (!player) {
       setError('name-required')
       return
-  }
+    }
   
-  Firebase.saveHighscore(player, score)
-  const list = [...highscoreList, {player, score, newItem: true}]
-    .sort((a, b) => b.score - a.score)
+    Firebase.saveHighscore(player, score)
+    const list = [...highscoreList, {player, score, newItem: true}]
+      .sort((a, b) => b.score - a.score)
 
-  list.splice(10)
+    list.splice(10)
 
-  setHighscoreList(list)
-  handleModal()
+    setHighscoreList(list)
+    handleModal()
   }
 
   const handleModal = () => {
@@ -69,7 +69,6 @@ const Finished = ({ score, resetGame }) => {
 
   return (
     <Wrapper>
-      <button onClick={handleModal}>open modal</button>
       {isModalVisible && (
         <Modal onModalClose={handleModal}>
           <h2>Congrats!</h2>
@@ -84,9 +83,8 @@ const Finished = ({ score, resetGame }) => {
         </Modal>
       )}
       { highscoreList.length > 0 && <HighscoreList list={highscoreList} /> }
-      <div>
-        <h3>Do you want to play again?</h3>
-        <button onClick={resetGame} className={styles.button}>YES</button>
+      <div className={styles.footer}>
+        <button onClick={resetGame} className={styles.button}>Play again</button>
       </div>
     </Wrapper>
   )

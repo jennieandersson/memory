@@ -15,15 +15,14 @@ const config = {
 
 
 if (!firebase.apps.length) {
-  firebase.initializeApp(config);
+  firebase.initializeApp(config)
 } else {
-  firebase.app(); // if already initialized, use that one
+  firebase.app() // if already initialized, use that one
 }
 
 export const db = app.firestore()
 
 export const saveHighscore = (player, score) => {
-  console.log('SAVE')
   db.collection('highscoreList').doc().set({
     player: player,
     score: score

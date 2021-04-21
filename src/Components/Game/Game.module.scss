@@ -1,7 +1,9 @@
+@import '../../styles/variables';
+
 .game {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 830px;
+  width: calc( #{$card-width} * 4 + 1em * 3 );
 }
