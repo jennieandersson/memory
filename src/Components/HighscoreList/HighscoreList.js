@@ -9,25 +9,28 @@ const HighscoreList = (list) => (
   </div>
 )
 
-const List = ({highscoreList}) => {
+const List = ({ highscoreList }) => {
   return (
     <ul className={styles.list}>
-      {highscoreList.map((highscore, index) => (
-        <ListItem 
-          key={highscore.uid}
-          player={highscore.player}
-          score={highscore.score}
-          newItem={highscore.newItem}
-          index={index} 
-        />
-      ))}
+      {highscoreList.map((highscore, index) => {
+        console.log(highscore)
+        return (
+          <ListItem
+            key={`${index}-${highscore.score}`}
+            player={highscore.player}
+            score={highscore.score}
+            newItem={highscore.newItem}
+            index={index}
+          />
+        )
+      })}
     </ul>
   )
 }
 
-const ListItem = ({player, score, index, newItem}) => {
+const ListItem = ({ player, score, index, newItem }) => {
   return (
-    <li className={cn(styles.item, {[styles.newItem]: !!newItem})}>
+    <li className={cn(styles.item, { [styles.newItem]: !!newItem })}>
       <span className={styles.place}>{index + 1}</span>
       <span className={styles.player}>{player}</span>
       <span className={styles.score}>{score}</span>
